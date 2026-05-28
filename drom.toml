@@ -10,8 +10,9 @@ github-organization = "ocamlpro"
 license = "LGPL2"
 min-edition = "4.07.0"
 name = "ez_file"
+skeleton = "program"
 synopsis = "Easy file manipulation (read_file, write_file, etc.)"
-version = "0.3.0"
+version = "0.4.0"
 
 # keys that you could also define:
 # odoc-target = "...odoc-target..."
@@ -24,7 +25,8 @@ version = "0.3.0"
 # homepage = "...homepage..."
 
 [project]
-description = """This library provides some modules to read and write files, and create 
+description = """
+This library provides some modules to read and write files, and create 
 and scan directories.
 """
 
@@ -65,6 +67,11 @@ share-dirs = ["share"]
 # ...
 
 # project-wide fields (depends on project skeleton)
+# examples:
+#  docker-alpine-image = "ocamlpro/ocaml:4.13"
+#  dune-lang = "2.1"
+#  readme-trailer = "..."
+#  dot-gitignore-trailer = "..."
 [fields]
 # ...
 

@@ -2,7 +2,7 @@
 (*                                                                        *)
 (*   Typerex Libraries                                                    *)
 (*                                                                        *)
-(*   Copyright 2011-2017 OCamlPro SAS                                     *)
+(*   Copyright 2011-2026 OCamlPro SAS                                     *)
 (*                                                                        *)
 (*   All rights reserved.  This file is distributed under the terms of    *)
 (*   the GNU Lesser General Public License version 2.1, with the          *)
@@ -10,13 +10,10 @@
 (*                                                                        *)
 (**************************************************************************)
 
-(* [FileString] and [FileAbstract] implement the [FileSig] interface. *)
-
-module FileOS = FileOS
-module FileSig = FileSig
-
-module EzFile = FileString
-module FileAbstract = FileAbstract
-module FileChannel = FileChannel
-
-module Slashifier = Slashifier
+val enable : unit -> unit
+val disable : unit -> unit
+val get_dir_separator : unit -> char
+val get_dir_separator_string : unit -> string
+val slashify : string -> string
+val concat : string -> string -> string
+val temp_file : ?temp_dir: string -> string -> string -> string

@@ -1,11 +1,11 @@
 # Keep this file in your GIT repo to help drom track generated files
 # begin version
-version:0.6.0~dev
+version:0.9.0
 # end version
 
 # hash of toml configuration files
 # used for generation of all files
-38d7ee132fdca58e40e8593ebb731eb5:.
+9aa97f19d5f4d407d8d3ee24f5aab0c5:.
 # end context for .
 
 # begin context for .github/workflows/ci.ml
@@ -30,7 +30,7 @@ be2d226b0dc658a425e86af1847a2316:.ocamlformat
 
 # begin context for .ocamlformat-ignore
 # file .ocamlformat-ignore
-a8d1bcd6f62c6b813b77d3ff8959d8d2:.ocamlformat-ignore
+c8f70450e7d78c0387644864ffe8cbd5:.ocamlformat-ignore
 # end context for .ocamlformat-ignore
 
 # begin context for .ocp-indent
@@ -45,12 +45,12 @@ a8d1bcd6f62c6b813b77d3ff8959d8d2:.ocamlformat-ignore
 
 # begin context for LICENSE.md
 # file LICENSE.md
-3e8c72433d2b8531f0e9716ab0e5fc8a:LICENSE.md
+cdfde087b1ceb33b9c5f9d01ddc08d62:LICENSE.md
 # end context for LICENSE.md
 
 # begin context for Makefile
 # file Makefile
-79c6863d340b7c60145053ba884feebd:Makefile
+af1157fb3599c96e00152d564db64b64:Makefile
 # end context for Makefile
 
 # begin context for README.md
@@ -95,7 +95,7 @@ c8281f46ba9a11d0b61bc8ef67eaa357:docs/style.css
 
 # begin context for drom.toml
 # file drom.toml
-4680d74fae3ab56021b78667d5b0fc25:drom.toml
+61839e8d3bf7209159a62ad2a75f2c66:drom.toml
 # end context for drom.toml
 
 # begin context for dune
@@ -105,22 +105,22 @@ df544cfaf9078d1bba2f90ed1b5adf5f:dune
 
 # begin context for dune-project
 # file dune-project
-d19df50bc2a2b6d306ddde718c10f7bf:dune-project
+6d4cd5636f52fc7edf771a588766bb6c:dune-project
 # end context for dune-project
 
 # begin context for opam/ez_file.opam
 # file opam/ez_file.opam
-89634f5f8677617a9a6b729cbdfd3ca9:opam/ez_file.opam
+181b3a7dd59114806144fa4c1b4a01b3:opam/ez_file.opam
 # end context for opam/ez_file.opam
 
 # begin context for scripts/after.sh
 # file scripts/after.sh
-1112fbe7067fce342365a25613b5659d:scripts/after.sh
+62c6489217feef26dac343e709b89c1a:scripts/after.sh
 # end context for scripts/after.sh
 
 # begin context for scripts/before.sh
 # file scripts/before.sh
-ae050b3099ac0b43d7c7f4295f6b2319:scripts/before.sh
+371e627833d9ac7ae2f906b5ec97aae2:scripts/before.sh
 # end context for scripts/before.sh
 
 # begin context for scripts/copy-bin.sh
@@ -155,7 +155,7 @@ bb3a9d286f0dc64021db4194427263ee:scripts/copy-bin.sh
 
 # begin context for sphinx/license.rst
 # file sphinx/license.rst
-abc6ae223dbcd2a710665e948f370518:sphinx/license.rst
+49671db676482a5b8d9fc14297699d21:sphinx/license.rst
 # end context for sphinx/license.rst
 
 # begin context for src/ez_file/dune
@@ -170,7 +170,7 @@ abc6ae223dbcd2a710665e948f370518:sphinx/license.rst
 
 # begin context for src/ez_file/package.toml
 # file src/ez_file/package.toml
-45c89f9c025ffd8438e7ba68ad24ab10:src/ez_file/package.toml
+d084e0c0b356453f70a0ab97451d4863:src/ez_file/package.toml
 # end context for src/ez_file/package.toml
 
 # begin context for test/expect-tests/dune

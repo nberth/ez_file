@@ -111,7 +111,7 @@ module Make(M : sig
           for i = 0 to Array.length array - 1 do
             let basename = array.(i) in
             let filename = M.add_basename dirname basename in
-            let filepath = Filename.concat dirpath basename in
+            let filepath = Slashifier.concat dirpath basename in
             let (keep, recurse) = check select ~filepath ~filename in
             if keep then f filepath;
             if recurse then
@@ -126,7 +126,7 @@ module Make(M : sig
           for i = 0 to Array.length array - 1 do
             let basename = array.(i) in
             let filename = M.add_basename dirname basename in
-            let filepath = Filename.concat dirpath basename in
+            let filepath = Slashifier.concat dirpath basename in
             let ( keep, recurse ) = check select ~filepath ~filename in
             match dft with
             | `Before ->
@@ -182,7 +182,7 @@ module Make(M : sig
               end else begin
                 let basename = array.(!i) in
                 let filename = M.add_basename dirname basename in
-                let filepath = Filename.concat dirpath basename in
+                let filepath = Slashifier.concat dirpath basename in
                 incr i;
                 let (keep, recurse) = check select ~filepath ~filename in
                 if recurse then Queue.add (filename,filepath) dirs;
@@ -215,7 +215,7 @@ module Make(M : sig
               else
                 let basename = array.(!i) in
                 let filename = M.add_basename dirname basename in
-                let filepath = Filename.concat dirpath basename in
+                let filepath = Slashifier.concat dirpath basename in
                 incr i;
                 let ( keep, recurse ) = check select ~filepath ~filename in
                 if recurse then enter_dir filename filepath keep;

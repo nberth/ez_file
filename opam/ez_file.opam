@@ -2,8 +2,8 @@
 # Do not modify, or add to the `skip` field of `drom.toml`.
 opam-version: "2.0"
 name: "ez_file"
-version: "0.3.0"
-license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
+version: "0.4.0"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 synopsis: "Easy file manipulation (read_file, write_file, etc.)"
 description: """\
 This library provides some modules to read and write files, and create 
@@ -37,7 +37,7 @@ install: [
 ]
 depends: [
   "ocaml" {>= "4.07.0"}
-  "dune" {>= "2.7.0"}
+  "dune" {>= "2.8.0"}
   "re" {>= "1.8.0" & < "2.0.0"}
   "ocplib_stuff" {>= "0.1.0" & < "1.0.0"}
   "base-unix" {>= "base"}
