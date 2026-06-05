@@ -38,6 +38,8 @@ let create_files dir =
 
 let test () =
 
+  Slashifier.enable ();
+
   let _ret = Sys.command "rm -rf tmpx" in
   let dir = "tmpx" in
   create_files dir;

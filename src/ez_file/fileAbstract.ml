@@ -56,7 +56,7 @@ type t = {
   file_partition : string;
 }
 
-let root_basename = FileOS.dir_separator_string
+let root_basename () = Slashifier.get_dir_separator_string ()
 
 let basename t = t.file_basename
 
@@ -64,7 +64,7 @@ let rec is_absolute t =
   if t.file_dir != t then
     is_absolute t.file_dir
   else
-    t.file_basename = root_basename
+    t.file_basename = root_basename ()
 
 let is_relative t = not (is_absolute t)
 let is_implicit t =
@@ -87,9 +87,9 @@ let is_implicit t =
 let to_root_dir t =
   let rec root = {
     file_dir = root;
-    file_basename = root_basename;
+    file_basename = root_basename ();
     file_partition = t.file_partition;
-    file_string = t.file_partition ^ root_basename;
+    file_string = t.file_partition ^ root_basename ();
   } in
   root
         *)
@@ -142,7 +142,7 @@ let add_basename_string dir basename =
   | "" | "/" | "\\" ->
     dir.file_partition ^ dir.file_basename ^ basename
   | _ ->
-    dir.file_string ^ FileOS.dir_separator_string ^ basename
+    dir.file_string ^ Slashifier.get_dir_separator_string () ^ basename
 
 let add_basename_simple dir basename =
   {
@@ -260,9 +260,9 @@ let of_path part path =
 
   if kind = Absolute then
     let rec root = {
-      file_basename = FileOS.dir_separator_string;
+      file_basename = Slashifier.get_dir_separator_string ();
       file_dir = root;
-      file_string = part ^ FileOS.dir_separator_string;
+      file_string = part ^ Slashifier.get_dir_separator_string ();
       file_partition = part;
     } in
     make root path
@@ -519,7 +519,7 @@ let equal t1 t2 =
 
 
 let temp_file t ext =
-  of_string (Filename.temp_file (to_string t) ext)
+  of_string (Slashifier.temp_file (to_string t) ext)
 
 let current_dir_name = of_string "."
 
@@ -527,7 +527,7 @@ let to_rooted_string t =
   if is_absolute t then
     t.file_string
   else
-    Printf.sprintf ".%c%s" FileOS.dir_separator t.file_string
+    Printf.sprintf ".%c%s" (Slashifier.get_dir_separator ()) t.file_string
 
 (*
 module String = FileString

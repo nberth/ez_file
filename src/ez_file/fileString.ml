@@ -26,10 +26,10 @@ let cut_extensions file =
 let is_absolute file = not (Filename.is_relative file)
 let is_relative = Filename.is_relative
 let is_implicit = Filename.is_implicit
-let concat = Filename.concat
-let add_path = Filename.concat
-let add_basename = Filename.concat
-let add_basenames = List.fold_left Filename.concat
+let concat = Slashifier.concat
+let add_path = Slashifier.concat
+let add_basename = Slashifier.concat
+let add_basenames = List.fold_left Slashifier.concat
 let dirname = Filename.dirname
 let basename = Filename.basename
 let check_suffix = Filename.check_suffix
@@ -152,7 +152,7 @@ let size64 filename =
 
 module OP = struct
 
-  let (//) = Filename.concat
+  let (//) = Slashifier.concat
 
   end
 
@@ -184,8 +184,8 @@ let rec copy_rec src dst =
   | MinUnix.S_DIR ->
     make_dir ~p:true dst;
     iter_dir ~f:(fun file ->
-        copy_rec (Filename.concat src file)
-          (Filename.concat dst file)) src
+        copy_rec (Slashifier.concat src file)
+          (Slashifier.concat dst file)) src
   | MinUnix.S_REG ->
     copy_file src dst
   | _ ->
@@ -202,8 +202,8 @@ let rec uncopy_rec src dst =
   | _, None -> ()
   | Some MinUnix.S_DIR, Some MinUnix.S_DIR ->
     iter_dir ~f:(fun file ->
-        uncopy_rec (Filename.concat src file)
-          (Filename.concat dst file)) src;
+        uncopy_rec (Slashifier.concat src file)
+          (Slashifier.concat dst file)) src;
     (try MinUnix.rmdir dst with _ -> ())
   | Some MinUnix.S_REG, Some MinUnix.S_REG ->
     Sys.remove dst
@@ -219,7 +219,7 @@ let find_in_path path name =
     let rec try_dir = function
     [] -> raise Not_found
       | dir::rem ->
-        let fullname = Filename.concat dir name in
+        let fullname = Slashifier.concat dir name in
         if Sys.file_exists fullname then fullname else try_dir rem
     in try_dir path
   end
